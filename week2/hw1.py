@@ -2,9 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2 as cv
 
-img = cv.imread('img/messi.jpg')
+file = 'messi.jpg'
+img = cv.imread('img/messi.jpg', cv.IMREAD_COLOR)
+h, w, c = img.shape
+cv.imshow('window', img)
+cv.displayOverlay('window', f'file name: {file}\nwidth: {w} \nheight: {h} \nchannels: {c}')
 
-cv.imshow('Original Image', img)
+
 cv.waitKey(0)
 cv.destroyAllWindows()
+
 
